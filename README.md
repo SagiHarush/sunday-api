@@ -7,7 +7,7 @@
 
 ## Getting started
 
-Requirements: Node.js 20 or later and npm.
+Requirements: Node.js 20.19 or later and npm.
 
 ```bash
 npm install
