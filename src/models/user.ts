@@ -3,4 +3,5 @@ export interface User {
   name: string;
   email: string;
   company: string;
+  engagementEndedAt?: string;
 }

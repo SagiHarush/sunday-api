@@ -3,14 +3,15 @@ import {
   getWorkspaceById,
   getWorkspaces,
 } from "../services/workspaceService";
+import { getRouteParam } from "./routeParams";
 
 export function listWorkspaces(_req: Request, res: Response) {
   res.status(200).json(getWorkspaces());
 }
 
 export function getWorkspace(req: Request, res: Response) {
-  const workspaceId = req.params.workspaceId;
-  if (typeof workspaceId !== "string" || workspaceId.length === 0) {
+  const workspaceId = getRouteParam(req, "workspaceId");
+  if (!workspaceId) {
     res.status(400).json({ error: "Invalid workspace ID" });
     return;
   }
